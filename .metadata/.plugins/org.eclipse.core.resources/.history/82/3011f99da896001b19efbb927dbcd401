@@ -1,0 +1,424 @@
+package com.peter.view;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
+
+import com.peter.model.Book;
+import com.peter.model.BookType;
+import com.peter.services.BookServiceImpl;
+import com.peter.services.BookTypeServiceImpl;
+import com.peter.util.StringUtil;
+
+import javax.swing.UIManager;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JTextPane;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
+import java.awt.event.ActionEvent;
+
+public class BookAddMaintain extends JInternalFrame {
+	private JTextField BookNameSearch;
+	private JTextField BookAuthorSearch;
+	private JTextField BookISBNSearch;
+	private JTable BookTable;
+	private JTextField NewBookISBN;
+	private JTextField NewBookName;
+	private JTextField NewBookAuthor;
+	private JComboBox<String> BookTypeSearch; 
+	private JComboBox<String> NewBookType;
+	private BookServiceImpl bookService = new BookServiceImpl();
+	private BookTypeServiceImpl bookTypeService = new BookTypeServiceImpl();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BookAddMaintain frame = new BookAddMaintain();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public BookAddMaintain() {
+		setClosable(true);
+		setIconifiable(true);
+		setTitle("\u56FE\u4E66\u7BA1\u7406");
+		setBounds(100, 100, 754, 641);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "\u641C\u7D22\u6761\u4EF6", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u4FEE\u6539\u56FE\u4E66", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		
+		JLabel NewName = new JLabel("\u4E66\u540D\uFF1A");
+		NewName.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JLabel NewISBN = new JLabel("ISBN\uFF1A");
+		NewISBN.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		NewBookISBN = new JTextField();
+		NewBookISBN.setFont(new Font("宋体", Font.PLAIN, 20));
+		NewBookISBN.setColumns(10);
+		
+		NewBookName = new JTextField();
+		NewBookName.setFont(new Font("宋体", Font.PLAIN, 20));
+		NewBookName.setColumns(10);
+		
+		JLabel NewAuthor = new JLabel("\u4F5C\u8005\uFF1A");
+		NewAuthor.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		NewBookAuthor = new JTextField();
+		NewBookAuthor.setFont(new Font("宋体", Font.PLAIN, 20));
+		NewBookAuthor.setColumns(10);
+		
+		JLabel BookType = new JLabel("\u56FE\u4E66\u7C7B\u522B\uFF1A");
+		BookType.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		NewBookType = new JComboBox();
+		NewBookType.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JLabel NewDesp = new JLabel("\u63CF\u8FF0\uFF1A");
+		NewDesp.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JTextPane NewBookDesp = new JTextPane();
+		NewBookDesp.setBackground(Color.LIGHT_GRAY);
+		NewBookDesp.setFont(new Font("宋体", Font.PLAIN, 20));
+		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(76)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addComponent(NewDesp, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(NewBookDesp, GroupLayout.PREFERRED_SIZE, 481, GroupLayout.PREFERRED_SIZE)
+							.addGap(60))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(NewName)
+									.addPreferredGap(ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+									.addComponent(NewBookName, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+									.addGap(134))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(NewISBN)
+									.addGap(18)
+									.addComponent(NewBookISBN, 139, 139, 139)
+									.addGap(136)))
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(BookType)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(NewBookType, 0, 99, Short.MAX_VALUE))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(NewAuthor)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(NewBookAuthor, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)))
+							.addGap(63))))
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+						.addComponent(NewBookAuthor, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addComponent(NewAuthor)
+						.addComponent(NewBookName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(NewName))
+					.addGap(18)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(NewISBN)
+						.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+							.addComponent(NewBookISBN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(BookType, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+							.addComponent(NewBookType, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGap(18)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(NewDesp, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addComponent(NewBookDesp, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		panel_1.setLayout(gl_panel_1);
+		
+		JButton btnNewButton = new JButton("\u4FEE\u6539");
+		btnNewButton.setIcon(new ImageIcon(BookAddMaintain.class.getResource("/images/modify.png")));
+		btnNewButton.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JButton button = new JButton("\u5220\u9664");
+		button.setIcon(new ImageIcon(BookAddMaintain.class.getResource("/images/delete.png")));
+		button.setFont(new Font("宋体", Font.PLAIN, 20));
+		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(124)
+					.addComponent(btnNewButton)
+					.addPreferredGap(ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+					.addComponent(button)
+					.addGap(155))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE)
+						.addComponent(panel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 718, Short.MAX_VALUE))
+					.addContainerGap())
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 707, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(21, Short.MAX_VALUE))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 134, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnNewButton)
+						.addComponent(button, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
+		
+		BookTable = new JTable();
+		BookTable.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+			},
+			new String[] {
+				"ID", "Title", "Author", "ISBN", "Type", "Desp"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, false, false, false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		BookTable.getColumnModel().getColumn(5).setPreferredWidth(209);
+		BookTable.setFont(new Font("宋体", Font.PLAIN, 20));
+		scrollPane.setViewportView(BookTable);
+		
+		JLabel title = new JLabel("\u4E66\u540D\uFF1A");
+		title.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		BookNameSearch = new JTextField();
+		BookNameSearch.setFont(new Font("宋体", Font.PLAIN, 20));
+		BookNameSearch.setColumns(10);
+		
+		JLabel author = new JLabel("\u4F5C\u8005\uFF1A");
+		author.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		BookAuthorSearch = new JTextField();
+		BookAuthorSearch.setFont(new Font("宋体", Font.PLAIN, 20));
+		BookAuthorSearch.setColumns(10);
+		
+		JLabel Type = new JLabel("\u56FE\u4E66\u7C7B\u522B\uFF1A");
+		Type.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JLabel ISBN = new JLabel("ISBN\uFF1A");
+		ISBN.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		BookISBNSearch = new JTextField();
+		BookISBNSearch.setFont(new Font("宋体", Font.PLAIN, 20));
+		BookISBNSearch.setColumns(10);
+		
+		BookTypeSearch = new JComboBox();
+		BookTypeSearch.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JButton btnNewButton_1 = new JButton("\u641C\u7D22");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				fillResultTable(arg0);
+			}
+		});
+		btnNewButton_1.setIcon(new ImageIcon(BookAddMaintain.class.getResource("/images/search.png")));
+		btnNewButton_1.setFont(new Font("宋体", Font.PLAIN, 20));
+		GroupLayout gl_panel = new GroupLayout(panel);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGap(52)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+						.addComponent(title)
+						.addComponent(ISBN))
+					.addGap(18)
+					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(BookISBNSearch)
+						.addComponent(BookNameSearch, GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+					.addGap(68)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(author)
+						.addComponent(Type))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(BookAuthorSearch, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+						.addComponent(BookTypeSearch, GroupLayout.PREFERRED_SIZE, 148, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+					.addComponent(btnNewButton_1)
+					.addContainerGap())
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(BookNameSearch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(title)
+						.addComponent(author)
+						.addComponent(BookAuthorSearch, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(BookISBNSearch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(ISBN)
+						.addComponent(Type, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+						.addComponent(BookTypeSearch, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(26))
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(27)
+					.addComponent(btnNewButton_1)
+					.addContainerGap(50, Short.MAX_VALUE))
+		);
+		panel.setLayout(gl_panel);
+		getContentPane().setLayout(groupLayout);
+		fillTypes();
+		fillAllResult();
+	}
+	
+	private void fillTypes() {
+		LinkedList<BookType> booktypes = bookTypeService.showAll();
+		BookTypeSearch.addItem(null);
+		for(BookType type:booktypes) {
+			BookTypeSearch.addItem(type.getType());
+			NewBookType.addItem(type.getType());
+		}
+		
+	}
+	
+	private void fillAllResult() {
+		Object[] temp=new Object[6];
+		DefaultTableModel dtm = (DefaultTableModel) BookTable.getModel();
+		dtm.setRowCount(0);
+		
+		for(Book book:bookService.getAllBooks()) {
+			temp[0] = book.getID();
+			temp[1] = book.getTitle(); 
+			temp[2] = book.getAuthor();
+			temp[3] = book.getISBN();
+			temp[4] = book.getType();
+			temp[5] = book.getDesp();
+			dtm.addRow(temp);
+		}
+		
+	}
+	
+
+	private void fillResultTable(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		String bookName = BookNameSearch.getText();
+		String bookISBN = BookISBNSearch.getText();
+		String bookAuthor = BookAuthorSearch.getText();
+		String bookType = (String)BookTypeSearch.getSelectedItem();
+		
+		if(!StringUtil.isempty(bookName)) {
+			Book book = bookService.getBook(bookName);
+			DefaultTableModel dtm = (DefaultTableModel) BookTable.getModel();
+			dtm.setRowCount(0);
+			
+			Object[] temp=new Object[6];
+			temp[0] = book.getID();
+			temp[1] = book.getTitle(); 
+			temp[2] = book.getAuthor();
+			temp[3] = book.getISBN();
+			temp[4] = book.getType();
+			temp[5] = book.getDesp();
+			
+			dtm.addRow(temp);
+		}else if(!StringUtil.isempty(bookISBN)) {
+			Book book = bookService.getBook2(bookISBN);
+			DefaultTableModel dtm = (DefaultTableModel) BookTable.getModel();
+			dtm.setRowCount(0);
+			
+			Object[] temp=new Object[6];
+			temp[0] = book.getID();
+			temp[1] = book.getTitle(); 
+			temp[2] = book.getAuthor();
+			temp[3] = book.getISBN();
+			temp[4] = book.getType();
+			temp[5] = book.getDesp();
+			
+			dtm.addRow(temp);
+		}else if(!StringUtil.isempty(bookAuthor)) {
+			DefaultTableModel dtm = (DefaultTableModel) BookTable.getModel();
+			dtm.setRowCount(0);
+			
+			Object[] temp=new Object[6];
+			
+			LinkedList<Book> books = bookService.getBooks(bookAuthor);
+			for(Book book:books) {
+				temp[0] = book.getID();
+				temp[1] = book.getTitle(); 
+				temp[2] = book.getAuthor();
+				temp[3] = book.getISBN();
+				temp[4] = book.getType();
+				temp[5] = book.getDesp();
+				dtm.addRow(temp);
+			}
+			
+		}else if(!StringUtil.isempty(bookType)) {
+			DefaultTableModel dtm = (DefaultTableModel) BookTable.getModel();
+			dtm.setRowCount(0);
+			
+			Object[] temp=new Object[6];
+			
+			LinkedList<Book> books = bookService.getBooks(bookType);
+			for(Book book:books) {
+				temp[0] = book.getID();
+				temp[1] = book.getTitle(); 
+				temp[2] = book.getAuthor();
+				temp[3] = book.getISBN();
+				temp[4] = book.getType();
+				temp[5] = book.getDesp();
+				dtm.addRow(temp);
+			}
+		}else {
+			fillAllResult();
+		}
+	}
+}

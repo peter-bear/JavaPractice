@@ -1,0 +1,7 @@
+package WebRegistration;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("\tWelcome to Peter's Blog!");
+	}
+}

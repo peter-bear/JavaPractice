@@ -1,0 +1,39 @@
+package WebRegistration;
+
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Client {
+	public static void main(String[] args) throws Exception {
+//		Socket To_Sever = new Socket("196.168.0.53", 10086);
+//		To_Sever.getOutputStream();
+		System.out.println(Welcome());
+	}
+	public static String Welcome() {
+		System.out.println("\tWelcome to Peter's Blog!");
+		while(true) {
+			System.out.println("What are you going to do?");
+			System.out.println("1. Log In");
+			System.out.println("2. Registration");
+			System.out.println("3. Change Password");
+			Scanner in = new Scanner(System.in);
+			System.out.print("Your choice(choose the number): ");
+			String choice1 = in.next();
+			System.out.println(Integer.getInteger(choice1));
+			switch (Integer.getInteger(choice1)) {
+			case 1:
+				in.close();
+				return "log_in";
+			case 2:
+				in.close();
+				return "reg";
+			case 3:
+				in.close();
+				return "change";
+			default:
+				System.out.println("Please put in number!!");
+				in.close();
+			}
+		}
+	}
+}

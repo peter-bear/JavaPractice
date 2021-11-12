@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.JDBC.Test.DML_CUD&apos; to &apos;JDBC_CRUD&apos;&#x0D;&#x0A;- Original project: &apos;JDBC_Study&apos;&#x0D;&#x0A;- Original element: &apos;com.JDBC.Test.DML_CUD&apos;&#x0D;&#x0A;- Renamed element: &apos;com.JDBC.Test.JDBC_CRUD&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;DML_CUD&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.JDBC.Test{DML_CUD.java[DML_CUD" matchStrategy="1" name="JDBC_CRUD" qualified="false" references="true" similarDeclarations="false" stamp="1616670222359" textual="false" version="1.0"/>
+</session>

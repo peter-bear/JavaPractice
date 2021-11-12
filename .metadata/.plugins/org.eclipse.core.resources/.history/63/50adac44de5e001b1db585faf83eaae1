@@ -1,0 +1,16 @@
+package WebRegistration;
+
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("\tWelcome to Peter's Blog!");
+		System.out.println("What are you going to do?");
+		System.out.println("1. Log In");
+		System.out.println("2. Registration");
+		System.out.println("3. Change Password");
+		Scanner in = new Scanner(System.in);
+		String choice1 = in.next();
+		
+	}
+}

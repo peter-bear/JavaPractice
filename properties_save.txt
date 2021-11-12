@@ -1,0 +1,3 @@
+-- listing properties --
+Biden=74
+Trump=72

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;MultiThreadsStudy.Tickets.tickets&apos; in &apos;MultiThreadsStudy.Tickets&apos;&#x0D;&#x0A;- Original project: &apos;hello-world&apos;&#x0D;&#x0A;- Original element: &apos;MultiThreadsStudy.Tickets.tickets&apos;&#x0D;&#x0A;- Getter method name: &apos;getTickets&apos;&#x0D;&#x0A;- Setter method name: &apos;setTickets&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;tickets&apos;" flags="589830" getter="getTickets" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;MultiThreadsStudy{Tickets.java[Tickets^tickets" insertion="0" setter="setTickets" stamp="1609762463616" version="1.0" visibility="1"/>
+</session>

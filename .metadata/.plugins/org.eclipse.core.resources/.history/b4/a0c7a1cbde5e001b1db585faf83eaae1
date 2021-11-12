@@ -1,0 +1,13 @@
+package WebRegistration;
+
+import java.net.Socket;
+
+public class Client {
+	public static void main(String[] args) throws Exception {
+		Socket To_Sever = new Socket("196.168.0.53", 10086);
+		To_Sever.getInputStream();
+	}
+	public static void Welcome() {
+		System.out.println("\tWelcome to Peter's Blog!");
+	}
+}
