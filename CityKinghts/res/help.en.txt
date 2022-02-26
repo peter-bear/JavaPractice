@@ -1,1 +1,0 @@
-A~Beat your opponents~before they beat you.~You can move~left/right/jump/crouch~using the joystick~or keys 4/6/2/8.~Pick up or drop weapons~with key 9.~Defend yourself with~key 7.~Hit with joystick or~press key 5,~kick with key 1.~You can also define your~own keys in Settings~-> Key Setup.~Use 0 to Return to Menu.~|||

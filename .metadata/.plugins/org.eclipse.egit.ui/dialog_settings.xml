@@ -2,14 +2,54 @@
 <section name="Workbench">
 	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="0"/>
 	<list key="RepositorySelectionPage.UsedUris">
-		<item value="https://github.com/RHIT-CSSE/csse220.git"/>
+		<item value="https://github.com/rhit-csse230/editortrees-202220-editortrees24winter2021.git"/>
+		<item value="https://github.com/rhit-csse230/binaryheaps-202220-peter-bear.git"/>
+		<item value="https://github.com/peter-bear/EditorTreePractice.git"/>
+		<item value="https://github.com/rhit-csse230/stringhashset-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/sortingraces-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/preorderbuildtree-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/treepracticehw5-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/graphsurfing-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/treepractice-202220-peter-bear.git"/>
+		<item value="https://github.com/rhit-csse230/doublets-202220-doublets34.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
-		<item value="bitbucket.org"/>
 		<item value="git.eclipse.org"/>
+		<item value="bitbucket.org"/>
 		<item value="github.com"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="peter-bear &lt;2388152240@qq.com&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="peter-bear &lt;2388152240@qq.com&gt;"/>
 	</list>
 	<section name="GitImportWizard">
 		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item key="HORIZONTAL_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="STAGING_SASH_FORM_WEIGHT" value="500,500"/>
+		<item key="sortItemState" value="false"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+	</section>
+	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="358"/>
+		<item key="DIALOG_Y_ORIGIN" value="83"/>
+		<item key="DIALOG_WIDTH" value="666"/>
+		<item key="DIALOG_HEIGHT" value="464"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
+		<list key="sashWeights">
+			<item value="600"/>
+			<item value="400"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.pull.PullResultDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="364"/>
+		<item key="DIALOG_Y_ORIGIN" value="112"/>
+		<item key="DIALOG_WIDTH" value="654"/>
+		<item key="DIALOG_HEIGHT" value="420"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
 </section>

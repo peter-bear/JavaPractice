@@ -12,6 +12,18 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="false"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\23881\git\editortrees-202220-editortrees24winter2021"/>
+			<item value="C:\Users\23881\git\binaryheaps-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\EditorTreePractice"/>
+			<item value="C:\Users\23881\git\stringhashset-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\sortingraces-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\preorderbuildtree-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\treepracticehw5-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\graphsurfing-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\treepractice-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\doublets-202220-doublets34"/>
+			<item value="C:\Users\23881\git\binarysearchtree-202220-peter-bear"/>
+			<item value="C:\Users\23881\git\stacksandqueues-202220-stack28"/>
 			<item value="C:\Users\23881\git\csse220\SampleExams\Exam2-202010"/>
 			<item value="E:\java程序\CityKinghts"/>
 			<item value="D:\素材\j2me格斗游戏《都市骑士》代码_爱给网_aigei_com\CityKinghts"/>
@@ -44,10 +56,11 @@
 	<section name="ExternalProjectImportWizard">
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
-		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\23881\OneDrive - Rose-Hulman Institute of Technology\RHIT\CSSE230-03\exam3practice\Exam3-practice"/>
 			<item value=""/>
 			<item value="E:\java程序\csse220-master\Exam2-201910"/>
 			<item value="E:\java程序\csse220-master\Exam2-202010"/>
@@ -55,10 +68,20 @@
 			<item value="E:\java程序\CityKinghts"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\23881\OneDrive - Rose-Hulman Institute of Technology\RHIT\CSSE230-03\exam2Practice\Exam2-202110-startingcode.zip"/>
+			<item value="C:\Users\23881\OneDrive - Rose-Hulman Institute of Technology\RHIT\CSSE230-03\exam2Practice\Exam2-201720-startingcode.zip"/>
+			<item value="C:\Users\23881\Desktop\临时文件\doublelet.zip"/>
+			<item value="C:\Users\23881\OneDrive - Rose-Hulman Institute of Technology\RHIT\CSSE230-03\week2\MCSSRaces.zip"/>
+			<item value="C:\Users\23881\Desktop\csse220-fallq-2020-21-final-project-fall-quarter-2021-a_105-master.zip"/>
 			<item value="E:\RHIT\csse220-fallq-2020-21-final-project-fallq2021_a202-master.zip"/>
 			<item value="C:\Users\23881\OneDrive - Rose-Hulman Institute of Technology\RHIT\CSSE220-02\csse220-fallq-2020-21-final-project-fallq2021_a202-master.zip"/>
 			<item value=""/>
 			<item value="E:\java程序\csse220-master\Exam1-202010\Exam1-Programming-Portion-202010-Solution.zip"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.internal.views.markers.FiltersConfigurationDialog">
+		<item key="SELECTED_FILTER_GROUP" value="TODOs"/>
+		<list key="PREV_SELECTED_ELEMENTS">
 		</list>
 	</section>
 </section>
